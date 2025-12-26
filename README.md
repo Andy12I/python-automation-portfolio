@@ -1,45 +1,51 @@
-# Python Automation Portfolio
+# 🐍 Python Automation Portfolio
 
-This repository contains a collection of Python scripts demonstrating skills in **Web Scraping**, **Browser Automation (Selenium)**, and **Data Processing (CSV)**.
+Welcome to my collection of Python automation tools! This repository documents my journey learning software development, featuring practical scripts for data scraping, system maintenance, and media processing.
 
-## 📂 Projects
+## 📂 Projects Overview
 
-### 1. The Quote Scraper (`scraper2.py`)
-A script that scrapes quotes from a test website and saves them into a structured format.
-* **Libraries:** `requests`, `beautifulsoup4`, `csv`
-* **Key Features:**
-    * Connects to a live URL and parses HTML content.
-    * Extracts specific data points (quotes) using CSS selectors.
-    * Cleans data and exports it to a **CSV file** automatically.
+### 1. 📺 YouTube Media Downloader (CLI)
+A command-line tool to download high-quality video or audio from YouTube.
+* **Features:**
+    * Interactive menu (choose Video vs. Audio).
+    * **FFmpeg Integration:** Automatically converts streams to clean MP3s.
+    * **4K Support:** Handles high-resolution video formats.
+    * Error handling for missing videos or connection drops.
+* **Tech Stack:** `yt-dlp`, `ffmpeg`, `os`
 
-### 2. The Login Bot (`login_bot3.py`)
-An automated testing bot that navigates a secure e-commerce environment.
-* **Libraries:** `selenium`, `webdriver-manager`
-* **Key Features:**
-    * **Headless Mode:** Runs invisibly in the background for efficiency.
-    * **Explicit Waits:** Uses `WebDriverWait` to handle dynamic page loading and network latency.
-    * **Assertion Logic:** Verifies successful login by checking URL redirections (`try/except` block).
-    * **Negative Testing:** Capable of handling and reporting login failures gracefully.
+### 2. 📰 Automated News Scraper
+A bot that gathers real-time headlines from news websites.
+* **Features:**
+    * Scrapes live data using HTTP requests.
+    * Parses HTML content to extract specific headlines and links.
+    * Saves summaries to local text files for offline reading.
+* **Tech Stack:** `requests`, `beautifulsoup4`
 
-## 🛠️ How to Run
+### 3. 🧹 Desktop File Cleaner
+An automation script to organize cluttered directories.
+* **Features:**
+    * Scans a target folder for loose files.
+    * Intelligently sorts files into sub-folders based on extension (Images, Docs, Media).
+    * Moves files safely using system operations.
+* **Tech Stack:** `os`, `shutil`
 
-1.  **Install Dependencies:**
-    ```bash
-    pip install selenium beautifulsoup4 requests webdriver-manager
-    ```
+---
 
-2.  **Run the Scraper:**
-    ```bash
-    python scraper2.py
-    ```
+## 🚀 How to Run These Tools
 
-3.  **Run the Bot:**
-    ```bash
-    python login_bot3.py
-    ```
+### Prerequisites
+You will need Python 3.x installed.
+Install the required libraries:
 
-## 🚀 Skills Demonstrated
-* **Python 3**: Scripting, Loops, File I/O.
-* **QA Automation**: Creating robust test cases (Positive & Negative paths).
-* **DOM Manipulation**: Locating elements via ID, Class, and Name.
-* **Version Control**: Git & GitHub.
+```bash
+pip install yt-dlp requests beautifulsoup4
+
+Note: For the YouTube Downloader, you must have FFmpeg installed and added to your system PATH.
+
+Usage
+Navigate to the project folder and run the script:
+
+Bash
+
+# Example: Running the Downloader
+python 03_Youtube_Downloader/downloader.py
