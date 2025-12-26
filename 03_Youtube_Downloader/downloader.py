@@ -11,7 +11,7 @@ def download_video():
     ydl_opts = {
         'outtmpl': os.path.join(save_path, '%(title)s.%(ext)s'),
         'ignoreerrors': True,
-        # THE MAGIC LINE: We tell it exactly where FFmpeg lives
+        # We tell it exactly where FFmpeg lives
         'ffmpeg_location': r'C:\ffmpeg\bin', 
     }
     
