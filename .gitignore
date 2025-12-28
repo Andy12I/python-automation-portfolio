@@ -208,4 +208,22 @@ __marimo__/
 *.mp3
 *.mp4
 *.webm
+# Ignore compiled python files
+__pycache__/
+*.pyc
+
+# Ignore media outputs AND inputs
+*.mp3
+*.mp4
+*.wav
+*.jpg
+*.png
+
+
+# Ignore huge tools
+ffmpeg.exe
+ffprobe.exe
+
+# Ignore VS Code settings
+.vscode/
 __pycache__/
