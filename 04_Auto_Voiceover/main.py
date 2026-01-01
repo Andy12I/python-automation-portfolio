@@ -1,35 +1,33 @@
-import asyncio
 import time
+import asyncio
 
-# Import our two workers (the scripts you just built)
-# NOTE: The filenames must match exactly what you saved earlier!
-import voicebot_pro
-import video_maker
+# Import the NEW workers we built today
+# Note: Ensure the filenames match exactly what you saved!
+import voice_bot_wrapper  # The robust CLI wrapper
+import vid_sub_maker      # The subtitle-enabled video renderer
 
-async def run_studio():
-    print("🎬 --- STARTING AUTOMATION STUDIO --- 🎬")
-    
-    # STEP 1: GENERATE VOICE
-    print("\n🗣️  Phase 1: Generating Voiceover...")
+def run_studio():
+    print("🎬 --- STARTING YOUTUBE AUTOMATION STUDIO (PRO) --- 🎬")
     start_time = time.time()
     
-    # We use 'await' because the voice bot is an Async function
-    await voicebot_pro.generate_voice()
+    # STEP 1: GENERATE VOICE & SUBTITLES
+    print("\n🗣️  Phase 1: Generating Audio & Subtitles...")
+    # We call the CLI wrapper function directly
+    voice_bot_wrapper.generate_voice_cli()
     
     print("✅ Phase 1 Complete.")
 
     # STEP 2: RENDER VIDEO
-    print("\n🎞️  Phase 2: Rendering Video...")
-    
-    # This is a normal function, so we just call it
-    video_maker.create_video()
+    print("\n🎞️  Phase 2: Rendering Video with Subtitles...")
+    # We call the video maker function
+    vid_sub_maker.create_video()
     
     end_time = time.time()
     duration = round(end_time - start_time, 2)
     
     print(f"\n✨ DONE! Total process took {duration} seconds.")
-    print("🚀 Your video is ready for upload!")
+    print("🚀 Your viral video is ready for upload!")
 
 if __name__ == "__main__":
-    # Run the async studio
-    asyncio.run(run_studio())
+    # Since the wrapper isn't async, we don't need asyncio.run() anymore
+    run_studio()
